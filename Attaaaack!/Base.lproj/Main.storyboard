@@ -56,22 +56,26 @@
                                     <constraint firstAttribute="width" constant="205" id="Laq-DP-ilr"/>
                                     <constraint firstAttribute="height" constant="79" id="bmP-WO-AD4"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="player2attackbtn"/>
+                                <state key="normal" title="Attack" backgroundImage="player2attackbtn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player1 has attacked Player2!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="750-eN-0cz">
+                                <rect key="frame" x="182" y="548" width="226" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0P-uG-Z8f">
                                 <rect key="frame" x="27" y="40" width="205" height="79"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="79" id="Hxt-iU-Rco"/>
                                     <constraint firstAttribute="width" constant="205" id="alH-yP-mU4"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="player1attackbtn"/>
+                                <state key="normal" title="Attack" backgroundImage="player1attackbtn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player1 has attacked Player2!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="750-eN-0cz">
-                                <rect key="frame" x="70" y="547" width="450" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -85,6 +89,8 @@
                             <constraint firstItem="I9r-jL-dA5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Xct-aG-Gl2"/>
                             <constraint firstAttribute="trailing" secondItem="TsP-de-a5G" secondAttribute="trailing" id="Xta-Mj-40v"/>
                             <constraint firstAttribute="trailing" secondItem="4El-g4-F1Z" secondAttribute="trailing" id="bB5-Sk-A88"/>
+                            <constraint firstItem="750-eN-0cz" firstAttribute="centerX" secondItem="fzg-7h-vYB" secondAttribute="centerX" id="bPF-q4-Vfd"/>
+                            <constraint firstItem="750-eN-0cz" firstAttribute="centerY" secondItem="fzg-7h-vYB" secondAttribute="centerY" id="cuM-L6-XBM"/>
                             <constraint firstItem="4El-g4-F1Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dJV-CJ-liJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fzg-7h-vYB" secondAttribute="bottom" constant="10" id="dx3-Uc-G3C"/>
                             <constraint firstItem="UCY-xk-ltP" firstAttribute="top" secondItem="aY9-2H-OaI" secondAttribute="top" id="eui-dA-sOv"/>
