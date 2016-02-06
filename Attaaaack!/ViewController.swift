@@ -36,7 +36,9 @@ class ViewController: UIViewController {
     
     func startGame() {
         
-        
+        gameOver.hidden = true
+        playAgainBtn.hidden = true
+
         player1 = Player(name: "PopOp23", hp: 110, attackPwr: 20)
         
         player2 = Player(name: "Knii46", hp: 110, attackPwr: 20)
@@ -53,14 +55,30 @@ class ViewController: UIViewController {
             player2Img.hidden = false
         }
         
+        printLbl.hidden = false
+        player1HpLbl.hidden = false
+        player2HpLbl.hidden = false
+        
     }
     
     func startGameAgain() {
     
-        NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "startGame", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "startGame", userInfo: nil, repeats: false)
         
-       
+}
     
+    func gameIsOver() {
+        
+        printLbl.hidden = true
+        player1HpLbl.hidden = true
+        player2HpLbl.hidden = true
+        player1Img.hidden = true
+        player2Img.hidden = true
+        
+        gameOver.hidden = false
+        playAgainBtn.hidden = false
+        
+        
         
     }
     
@@ -79,17 +97,14 @@ class ViewController: UIViewController {
             printLbl.text = "\(player1.name) killed \(player2.name)"
             player2Img.hidden = true
            
-            startGameAgain()
+            gameIsOver()
             
         }
         
-       
-        
-    }
+}
     
     
-  
-    @IBAction func player2AttackTapped(sender: AnyObject) {
+  @IBAction func player2AttackTapped(sender: AnyObject) {
         
         if player1.attenptAttack(player2.attackPwr) {
             printLbl.text = "\(player2.name) attacked \(player1.name) for \(player2.attackPwr) HP"
@@ -103,7 +118,7 @@ class ViewController: UIViewController {
             printLbl.text = "\(player2.name) killed \(player1.name)"
             player1Img.hidden = true
             
-            startGameAgain()
+            gameIsOver()
             
         }
         
@@ -111,6 +126,7 @@ class ViewController: UIViewController {
  
     @IBAction func playAgainTapped(sender: AnyObject) {
         
+        startGameAgain()
         
     }
 
