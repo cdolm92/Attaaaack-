@@ -20,6 +20,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var player2Img: UIImageView!
     
+    @IBOutlet weak var gameOver: UILabel!
+    
+    @IBOutlet weak var playAgainBtn: UIButton!
+    
     var player1: Player!
     var player2: Player!
     
@@ -103,7 +107,9 @@ class ViewController: UIViewController {
             
         }
         
-      
+}
+ 
+    @IBAction func playAgainTapped(sender: AnyObject) {
         
         
     }

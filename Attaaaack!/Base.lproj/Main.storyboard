@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 HP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwp-0D-20P">
-                                <rect key="frame" x="150" y="127" width="58" height="21"/>
+                                <rect key="frame" x="150" y="127" width="57.5" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -98,6 +98,29 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVi-6I-jgy">
+                                <rect key="frame" x="187" y="182" width="226" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="Hc4-VK-1pj"/>
+                                    <constraint firstAttribute="width" constant="226" id="Tu8-QY-jaz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Be5-QX-iUW">
+                                <rect key="frame" x="254" y="223" width="99" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="64s-bL-eLT"/>
+                                    <constraint firstAttribute="width" constant="99" id="6j0-2J-QPm"/>
+                                </constraints>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xcz-xz-R62"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -121,18 +144,24 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fzg-7h-vYB" secondAttribute="bottom" constant="10" id="dx3-Uc-G3C"/>
                             <constraint firstItem="UCY-xk-ltP" firstAttribute="top" secondItem="aY9-2H-OaI" secondAttribute="top" id="eui-dA-sOv"/>
                             <constraint firstItem="aY9-2H-OaI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="14" id="hjA-oz-uEX"/>
+                            <constraint firstItem="lVi-6I-jgy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hzQ-Q4-QeW"/>
                             <constraint firstItem="TsP-de-a5G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j2a-0c-MDC"/>
                             <constraint firstItem="E0P-uG-Z8f" firstAttribute="baseline" secondItem="I9r-jL-dA5" secondAttribute="baseline" id="jXO-0H-RAF"/>
                             <constraint firstItem="3Pz-al-QWo" firstAttribute="baseline" secondItem="Kwp-0D-20P" secondAttribute="baseline" id="kSI-zL-7KM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TsP-de-a5G" secondAttribute="bottom" id="lkO-ey-n8t"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4El-g4-F1Z" secondAttribute="bottom" id="pes-5w-xGB"/>
+                            <constraint firstItem="lVi-6I-jgy" firstAttribute="top" secondItem="3Pz-al-QWo" secondAttribute="bottom" constant="34" id="qb4-ma-Gzi"/>
                             <constraint firstItem="I9r-jL-dA5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="s9z-S8-u12"/>
                             <constraint firstItem="I9r-jL-dA5" firstAttribute="baseline" secondItem="E0P-uG-Z8f" secondAttribute="baseline" id="tlL-kY-3xw"/>
+                            <constraint firstItem="Be5-QX-iUW" firstAttribute="top" secondItem="lVi-6I-jgy" secondAttribute="bottom" constant="8" id="uEr-Dy-WkD"/>
+                            <constraint firstItem="Be5-QX-iUW" firstAttribute="centerX" secondItem="lVi-6I-jgy" secondAttribute="centerX" constant="3.5" id="w7v-Xr-nXv"/>
                             <constraint firstItem="3Pz-al-QWo" firstAttribute="trailing" secondItem="750-eN-0cz" secondAttribute="trailing" id="xHB-BX-SG2"/>
                             <constraint firstItem="fzg-7h-vYB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5.5" id="zb2-B1-izt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gameOver" destination="lVi-6I-jgy" id="KPU-Je-XRl"/>
+                        <outlet property="playAgainBtn" destination="Be5-QX-iUW" id="H1x-lD-hU7"/>
                         <outlet property="player1HpLbl" destination="Kwp-0D-20P" id="03F-G0-Q2G"/>
                         <outlet property="player1Img" destination="aY9-2H-OaI" id="PTq-I1-tph"/>
                         <outlet property="player2HpLbl" destination="3Pz-al-QWo" id="v3B-ou-esL"/>
