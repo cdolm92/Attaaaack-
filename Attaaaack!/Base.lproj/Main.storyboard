@@ -59,6 +59,9 @@
                                 <state key="normal" title="Attack" backgroundImage="player2attackbtn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="player2AttackTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1jL-wr-Dqj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player1 has attacked Player2!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="750-eN-0cz">
                                 <rect key="frame" x="182" y="548" width="226" height="20"/>
@@ -75,6 +78,9 @@
                                 <state key="normal" title="Attack" backgroundImage="player1attackbtn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="player1AttackTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ST-Ul-Xwj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 HP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwp-0D-20P">
                                 <rect key="frame" x="150" y="127" width="58" height="21"/>
@@ -126,6 +132,13 @@
                             <constraint firstItem="fzg-7h-vYB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-5.5" id="zb2-B1-izt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="player1HpLbl" destination="Kwp-0D-20P" id="03F-G0-Q2G"/>
+                        <outlet property="player1Img" destination="aY9-2H-OaI" id="PTq-I1-tph"/>
+                        <outlet property="player2HpLbl" destination="3Pz-al-QWo" id="v3B-ou-esL"/>
+                        <outlet property="player2Img" destination="UCY-xk-ltP" id="dZ2-23-nkg"/>
+                        <outlet property="printLbl" destination="750-eN-0cz" id="zzD-Hc-RNu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
