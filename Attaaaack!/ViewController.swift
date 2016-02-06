@@ -35,7 +35,6 @@ class ViewController: UIViewController {
     }
     
     func startGame() {
-        
         gameOver.hidden = true
         playAgainBtn.hidden = true
 
@@ -62,13 +61,11 @@ class ViewController: UIViewController {
     }
     
     func startGameAgain() {
-    
         NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "startGame", userInfo: nil, repeats: false)
         
 }
     
     func gameIsOver() {
-        
         printLbl.hidden = true
         player1HpLbl.hidden = true
         player2HpLbl.hidden = true
@@ -77,15 +74,12 @@ class ViewController: UIViewController {
         
         gameOver.hidden = false
         playAgainBtn.hidden = false
-        
-        
-        
+    
     }
     
 
     @IBAction func player1AttackTapped(sender: AnyObject) {
-       
-        if player2.attenptAttack(player1.attackPwr) {
+       if player2.attenptAttack(player1.attackPwr) {
             printLbl.text = "\(player1.name) Attacked \(player2.name) for \(player1.attackPwr) HP"
             player2HpLbl.text = "\(player2.hp) HP"
         } else {
@@ -105,7 +99,6 @@ class ViewController: UIViewController {
     
     
   @IBAction func player2AttackTapped(sender: AnyObject) {
-        
         if player1.attenptAttack(player2.attackPwr) {
             printLbl.text = "\(player2.name) attacked \(player1.name) for \(player2.attackPwr) HP"
             player1HpLbl.text = "\(player1.hp) HP"
@@ -125,7 +118,6 @@ class ViewController: UIViewController {
 }
  
     @IBAction func playAgainTapped(sender: AnyObject) {
-        
         startGameAgain()
         
     }
