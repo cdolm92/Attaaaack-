@@ -39,12 +39,16 @@ class ViewController: UIViewController {
     }
     
     func startGame() {
+        let char1HP = Int(arc4random_uniform(UInt32(200)))
+        let char2HP = Int(arc4random_uniform(UInt32(200)))
+        
+        
         gameOver.hidden = true
         playAgainBtn.hidden = true
 
-        player1 = Player(name: "PopOp23", hp: 110, attackPwr: 20)
+        player1 = Player(name: "PopOp23", hp: char1HP, attackPwr: generateAttackPwr())
         
-        player2 = Player(name: "Knii46", hp: 110, attackPwr: 20)
+        player2 = Player(name: "Knii46", hp: char2HP, attackPwr: generateAttackPwr())
         
         player1HpLbl.text = "\(player1.hp) HP"
         player2HpLbl.text = "\(player2.hp) HP"
@@ -91,14 +95,23 @@ class ViewController: UIViewController {
         }
     }
     
+    func generateAttackPwr() -> Int {
+        return Int(arc4random_uniform(30))
+    
+    }
+    
 
     @IBAction func player1AttackTapped(sender: AnyObject) {
+        
+         let newPwr = generateAttackPwr()
+     
+        
        self.player2Btn.enabled = false
         NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "enableBtn", userInfo: nil, repeats: false)
         
         
-       if player2.attenptAttack(player1.attackPwr) {
-            printLbl.text = "\(player1.name) Attacked \(player2.name) for \(player1.attackPwr) HP"
+       if player2.attenptAttack(newPwr) {
+            printLbl.text = "\(player1.name) Attacked \(player2.name) for \(newPwr) HP"
             player2HpLbl.text = "\(player2.hp) HP"
         } else {
             printLbl.text = "Attack was unsuccesful"
@@ -117,13 +130,15 @@ class ViewController: UIViewController {
     
     
   @IBAction func player2AttackTapped(sender: AnyObject) {
+   let newPwr = generateAttackPwr()
+    
     
     self.player1Btn.enabled = false
     NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "enableBtn", userInfo: nil, repeats: false)
 
     
-        if player1.attenptAttack(player2.attackPwr) {
-            printLbl.text = "\(player2.name) attacked \(player1.name) for \(player2.attackPwr) HP"
+        if player1.attenptAttack(newPwr) {
+            printLbl.text = "\(player2.name) attacked \(player1.name) for \(newPwr) HP"
             player1HpLbl.text = "\(player1.hp) HP"
         } else {
             printLbl.text = "Attack was unsuccessful"
