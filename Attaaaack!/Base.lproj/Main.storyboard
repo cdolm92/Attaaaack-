@@ -162,8 +162,10 @@
                     <connections>
                         <outlet property="gameOver" destination="lVi-6I-jgy" id="KPU-Je-XRl"/>
                         <outlet property="playAgainBtn" destination="Be5-QX-iUW" id="H1x-lD-hU7"/>
+                        <outlet property="player1Btn" destination="E0P-uG-Z8f" id="IBm-84-yrs"/>
                         <outlet property="player1HpLbl" destination="Kwp-0D-20P" id="03F-G0-Q2G"/>
                         <outlet property="player1Img" destination="aY9-2H-OaI" id="PTq-I1-tph"/>
+                        <outlet property="player2Btn" destination="I9r-jL-dA5" id="jbS-Zp-aTG"/>
                         <outlet property="player2HpLbl" destination="3Pz-al-QWo" id="v3B-ou-esL"/>
                         <outlet property="player2Img" destination="UCY-xk-ltP" id="dZ2-23-nkg"/>
                         <outlet property="printLbl" destination="750-eN-0cz" id="zzD-Hc-RNu"/>

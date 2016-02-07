@@ -24,6 +24,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playAgainBtn: UIButton!
     
+    @IBOutlet weak var player1Btn: UIButton!
+    
+    @IBOutlet weak var player2Btn: UIButton!
+    
     var player1: Player!
     var player2: Player!
     
@@ -66,7 +70,7 @@ class ViewController: UIViewController {
 }
     
     func gameIsOver() {
-        printLbl.hidden = true
+        printLbl.hidden = false
         player1HpLbl.hidden = true
         player2HpLbl.hidden = true
         player1Img.hidden = true
@@ -77,8 +81,22 @@ class ViewController: UIViewController {
     
     }
     
+    func enableBtn() {
+        if self.player2Btn.enabled == false {
+            self.player2Btn.enabled = true
+        }
+        
+        if self.player1Btn.enabled == false {
+            self.player1Btn.enabled = true
+        }
+    }
+    
 
     @IBAction func player1AttackTapped(sender: AnyObject) {
+       self.player2Btn.enabled = false
+        NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "enableBtn", userInfo: nil, repeats: false)
+        
+        
        if player2.attenptAttack(player1.attackPwr) {
             printLbl.text = "\(player1.name) Attacked \(player2.name) for \(player1.attackPwr) HP"
             player2HpLbl.text = "\(player2.hp) HP"
@@ -99,6 +117,11 @@ class ViewController: UIViewController {
     
     
   @IBAction func player2AttackTapped(sender: AnyObject) {
+    
+    self.player1Btn.enabled = false
+    NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "enableBtn", userInfo: nil, repeats: false)
+
+    
         if player1.attenptAttack(player2.attackPwr) {
             printLbl.text = "\(player2.name) attacked \(player1.name) for \(player2.attackPwr) HP"
             player1HpLbl.text = "\(player1.hp) HP"
